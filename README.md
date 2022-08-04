@@ -6,7 +6,7 @@ step1:
     创建mysql数据库，表结构sql文件上面已经给了
 step2:
     一行docker命令即可，参数解释如下
-    ENV ip=数据库IP,默认127.0.0.1
+    ENV ip=数据库IP,默认127.0.0.1</br>
     ENV port=数据库端口,默认3306 
     ENV db=数据库名称,默认dsback 
     ENV dbUserName=数据库账户,默认root 
