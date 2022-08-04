@@ -2,6 +2,19 @@
 小蝴蝶面板是一款支持数据库定时备份、文件定时备份的开源软件，支持docker离线部署
 
 # docker安装
+step1:
+    创建mysql数据库，表结构sql文件上面已经给了
+step2:
+    一行docker命令即可，参数解释如下
+    ENV ip=数据库IP,默认127.0.0.1
+    ENV port=数据库端口,默认3306 
+    ENV db=数据库名称,默认dsback 
+    ENV dbUserName=数据库账户,默认root 
+    ENV dbPassWord=数据库密码,默认root 
+    ENV sysUserName=登录面板账户,默认admin 
+    ENV sysPassWord=登录面板密码,默认admin
+    
+    docker run -d --name dsback --restart=always -p 8080:8080 -e ip=127.0.0.1 -e port=3306 -e db=dsback -e dbUserName=root -e dbPassWord=root -e sysUserName=admin -e sysPassWord=admin aeert/dsback:1.0.0
 
 # 软件截图
 ![image](https://user-images.githubusercontent.com/95081538/182773802-67c0f991-495a-46dd-99a8-dc159dfec60a.png)
