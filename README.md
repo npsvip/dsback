@@ -2,9 +2,9 @@
 小蝴蝶面板是一款支持数据库定时备份、文件定时备份的开源软件，支持docker离线部署
 
 # docker安装
-##step1:
-    创建mysql数据库，表结构sql文件上面已经给了
-##step2:
+step1:</br>
+    创建mysql数据库，表结构sql文件上面已经给了</br>
+step2:</br>
     一行docker命令即可，参数解释如下</br>
     ENV ip=数据库IP,默认127.0.0.1</br>
     ENV port=数据库端口,默认3306 </br>
