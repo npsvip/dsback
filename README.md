@@ -4,8 +4,9 @@
 ***# 软件功能***</br>
 支持Linux全平台，多种数据库、文件定时备份，多种服务器中间件安装，企业微信通知，系统DDOS防御及防攻击优化等
 
-支持系统</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Linux全平台(中间件安装及系统防护功能仅支持Centos、Ubuntu)
+系统及通知</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Linux全平台(中间件安装及系统防护功能仅支持Centos、Ubuntu)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 企业微信实时通知
 
 数据库备份</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Mysql</br>
