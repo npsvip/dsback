@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 30/08/2022 22:11:03
+ Date: 05/09/2022 18:57:22
 */
 
 SET NAMES utf8mb4;
@@ -223,7 +223,7 @@ CREATE TABLE `schedule_job` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1563086399110942723 DEFAULT CHARSET=utf8 COMMENT='定时任务';
+) ENGINE=InnoDB AUTO_INCREMENT=1565610175157547011 DEFAULT CHARSET=utf8 COMMENT='定时任务';
 
 -- ----------------------------
 -- Table structure for schedule_job_log
@@ -256,7 +256,7 @@ CREATE TABLE `tb_dict` (
   `remark` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL COMMENT '备注',
   `del_flag` tinyint(4) DEFAULT '0' COMMENT '删除标记  -1：已删除  0：正常',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1563038625162067971 DEFAULT CHARSET=utf8 COMMENT='字典表';
+) ENGINE=InnoDB AUTO_INCREMENT=1565610485372465157 DEFAULT CHARSET=utf8 COMMENT='字典表';
 
 -- ----------------------------
 -- Table structure for tb_server
@@ -266,7 +266,7 @@ CREATE TABLE `tb_server` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `operating_system` tinyint(1) NOT NULL DEFAULT '1' COMMENT '操作系统(0:其它 1:centos 2:ubuntu 3:redhat 4:windows)',
+  `operating_system` tinyint(1) NOT NULL DEFAULT '1' COMMENT '操作系统(0:其它 1:centos 2:ubuntu 3:debian)',
   `system_version` varchar(32) DEFAULT NULL COMMENT '系统版本',
   `ip` varchar(64) NOT NULL COMMENT '服务器IP',
   `port` varchar(8) NOT NULL DEFAULT '22' COMMENT '服务器SSH端口',
@@ -276,7 +276,7 @@ CREATE TABLE `tb_server` (
   `init` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否换源',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unq_ip` (`ip`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1564542048617365506 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1566720208171728898 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
 
 -- ----------------------------
 -- Table structure for tb_server_db
@@ -297,7 +297,7 @@ CREATE TABLE `tb_server_db` (
   `back_path` varchar(255) NOT NULL COMMENT '备份根目录',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1563086398972530691 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1565610016491220994 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
 
 -- ----------------------------
 -- Table structure for tb_server_defense
@@ -312,7 +312,7 @@ CREATE TABLE `tb_server_defense` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1560935180821078019 DEFAULT CHARSET=utf8 COMMENT='系统防御';
+) ENGINE=InnoDB AUTO_INCREMENT=1565610364727504898 DEFAULT CHARSET=utf8 COMMENT='系统防御';
 
 -- ----------------------------
 -- Table structure for tb_server_file
@@ -330,7 +330,7 @@ CREATE TABLE `tb_server_file` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1563052074407559171 DEFAULT CHARSET=utf8 COMMENT='文件备份';
+) ENGINE=InnoDB AUTO_INCREMENT=1565610174977191938 DEFAULT CHARSET=utf8 COMMENT='文件备份';
 
 -- ----------------------------
 -- Table structure for tb_server_middleware
@@ -349,6 +349,6 @@ CREATE TABLE `tb_server_middleware` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1564154307140419586 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
+) ENGINE=InnoDB AUTO_INCREMENT=1566721600076677122 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
 
 SET FOREIGN_KEY_CHECKS = 1;
