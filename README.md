@@ -20,7 +20,8 @@ Panel DB(原小蝴蝶面板)是一款免费开源、支持多系统、多种中�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● SqlServer</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● MongoDb</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● PostgreSql</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Docker
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Docker</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Nginx
 
 系统防护</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● DDOS防御脚本</br>
