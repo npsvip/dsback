@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 05/09/2022 18:57:22
+ Date: 07/09/2022 19:15:54
 */
 
 SET NAMES utf8mb4;
@@ -276,7 +276,7 @@ CREATE TABLE `tb_server` (
   `init` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否换源',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unq_ip` (`ip`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1566720208171728898 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1567470375753814019 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
 
 -- ----------------------------
 -- Table structure for tb_server_db
@@ -312,7 +312,7 @@ CREATE TABLE `tb_server_defense` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1565610364727504898 DEFAULT CHARSET=utf8 COMMENT='系统防御';
+) ENGINE=InnoDB AUTO_INCREMENT=1567471039099768834 DEFAULT CHARSET=utf8 COMMENT='系统防御';
 
 -- ----------------------------
 -- Table structure for tb_server_file
@@ -340,7 +340,7 @@ CREATE TABLE `tb_server_middleware` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '中间件类型(1:mysql 2:oracle 3:sqlserver 4:redis 5:mongodb 6:postgresql 7:docker)',
+  `type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '中间件类型(1:mysql 2:oracle 3:sqlserver 4:redis 5:mongodb 6:postgresql 7:docker 8:nginx)',
   `version` varchar(32) NOT NULL DEFAULT '0' COMMENT '中间件版本',
   `port` varchar(8) NOT NULL DEFAULT '22' COMMENT '服务器SSH端口',
   `user_name` varchar(64) NOT NULL COMMENT '用户名',
@@ -349,6 +349,6 @@ CREATE TABLE `tb_server_middleware` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1566721600076677122 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
+) ENGINE=InnoDB AUTO_INCREMENT=1567470932321177603 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
 
 SET FOREIGN_KEY_CHECKS = 1;
