@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 07/09/2022 19:15:54
+ Date: 09/09/2022 11:07:13
 */
 
 SET NAMES utf8mb4;
@@ -223,7 +223,7 @@ CREATE TABLE `schedule_job` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1565610175157547011 DEFAULT CHARSET=utf8 COMMENT='定时任务';
+) ENGINE=InnoDB AUTO_INCREMENT=1568072896985735171 DEFAULT CHARSET=utf8 COMMENT='定时任务';
 
 -- ----------------------------
 -- Table structure for schedule_job_log
@@ -276,7 +276,7 @@ CREATE TABLE `tb_server` (
   `init` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否换源',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unq_ip` (`ip`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1567470375753814019 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1567757985692860418 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
 
 -- ----------------------------
 -- Table structure for tb_server_db
@@ -312,7 +312,7 @@ CREATE TABLE `tb_server_defense` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1567471039099768834 DEFAULT CHARSET=utf8 COMMENT='系统防御';
+) ENGINE=InnoDB AUTO_INCREMENT=1567881234208534531 DEFAULT CHARSET=utf8 COMMENT='系统防御';
 
 -- ----------------------------
 -- Table structure for tb_server_file
@@ -330,7 +330,7 @@ CREATE TABLE `tb_server_file` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1565610174977191938 DEFAULT CHARSET=utf8 COMMENT='文件备份';
+) ENGINE=InnoDB AUTO_INCREMENT=1567888456783265794 DEFAULT CHARSET=utf8 COMMENT='文件备份';
 
 -- ----------------------------
 -- Table structure for tb_server_middleware
@@ -350,5 +350,22 @@ CREATE TABLE `tb_server_middleware` (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1567470932321177603 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
+
+-- ----------------------------
+-- Table structure for tb_server_monitor
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_server_monitor`;
+CREATE TABLE `tb_server_monitor` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `server_id` bigint(20) NOT NULL DEFAULT '1' COMMENT '服务器ID',
+  `job_id` bigint(20) DEFAULT NULL COMMENT '任务id',
+  `middleware` varchar(512) DEFAULT NULL COMMENT '中间件或服务',
+  `cpu_threshold` tinyint(4) DEFAULT NULL COMMENT 'CPU告警阈值',
+  `memory_threshold` tinyint(4) DEFAULT NULL COMMENT '内存告警阈值',
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE KEY `unq_server_id` (`server_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1568072242426847234 DEFAULT CHARSET=utf8 COMMENT='服务器监控';
 
 SET FOREIGN_KEY_CHECKS = 1;
