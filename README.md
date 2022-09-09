@@ -1,5 +1,5 @@
 # Panel DB
-Panel DB(原小蝴蝶面板)是一款免费开源、支持多系统、多种中间件安装、多种数据库定时备份、文件定时备份、企业微信通知、服务器DDOS防护等功能的运维面板，支持docker离线部署
+Panel DB(原小蝴蝶面板)是一款免费开源、支持多系统、多种中间件安装、多种数据库定时备份、文件定时备份、系统监控、企业微信通知、服务器DDOS防护等功能的运维面板，支持docker离线部署
 
 ***# 软件功能***</br>
 支持Linux全平台，多种数据库、文件定时备份，多种服务器中间件安装，企业微信通知，系统DDOS防御及防攻击优化等
@@ -55,4 +55,5 @@ ENV sysPassWord=登录面板密码,默认admin</br>
 ![4](https://user-images.githubusercontent.com/95081538/188084194-12d8912d-c997-43fe-b449-c659141861fa.jpg)
 ![5](https://user-images.githubusercontent.com/95081538/188084222-4f6b80db-2261-4bd6-9ec8-992707132731.jpg)
 ![6](https://user-images.githubusercontent.com/95081538/188084253-e53eccfe-b971-460a-9e29-1258880d310f.jpg)
+<img width="1677" alt="WechatIMG321" src="https://user-images.githubusercontent.com/95081538/189280624-e44414f9-1703-4ef0-a1c3-783edd3b796f.png">
 ![7](https://user-images.githubusercontent.com/95081538/188084275-6b2c1ee7-05d4-4dee-9bbe-7bd2739c806a.jpg)
