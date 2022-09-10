@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 09/09/2022 11:07:13
+ Date: 10/09/2022 16:37:21
 */
 
 SET NAMES utf8mb4;
@@ -216,14 +216,14 @@ CREATE TABLE `QRTZ_TRIGGERS` (
 DROP TABLE IF EXISTS `schedule_job`;
 CREATE TABLE `schedule_job` (
   `job_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '任务id',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `bean_name` varchar(200) DEFAULT NULL COMMENT 'spring bean名称',
   `params` varchar(2000) DEFAULT NULL COMMENT '参数',
   `cron_expression` varchar(100) DEFAULT NULL COMMENT 'cron表达式',
   `status` tinyint(4) DEFAULT NULL COMMENT '任务状态  0：正常  1：暂停',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1568072896985735171 DEFAULT CHARSET=utf8 COMMENT='定时任务';
+) ENGINE=InnoDB AUTO_INCREMENT=1568273704067059714 DEFAULT CHARSET=utf8 COMMENT='定时任务';
 
 -- ----------------------------
 -- Table structure for schedule_job_log
@@ -251,12 +251,12 @@ CREATE TABLE `tb_dict` (
   `name` varchar(100) CHARACTER SET utf8mb4 NOT NULL COMMENT '字典名称',
   `type` varchar(100) CHARACTER SET utf8mb4 NOT NULL COMMENT '字典类型',
   `code` varchar(100) CHARACTER SET utf8mb4 NOT NULL COMMENT '字典码',
-  `value` varchar(1000) CHARACTER SET utf8mb4 NOT NULL COMMENT '字典值',
+  `value` varchar(1000) CHARACTER SET utf8mb4 DEFAULT NULL COMMENT '字典值',
   `order_num` int(11) DEFAULT '0' COMMENT '排序',
   `remark` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL COMMENT '备注',
   `del_flag` tinyint(4) DEFAULT '0' COMMENT '删除标记  -1：已删除  0：正常',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1565610485372465157 DEFAULT CHARSET=utf8 COMMENT='字典表';
+) ENGINE=InnoDB AUTO_INCREMENT=1568518444150767620 DEFAULT CHARSET=utf8 COMMENT='字典表';
 
 -- ----------------------------
 -- Table structure for tb_server
@@ -276,7 +276,7 @@ CREATE TABLE `tb_server` (
   `init` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否换源',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unq_ip` (`ip`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1567757985692860418 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1568092797691539458 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
 
 -- ----------------------------
 -- Table structure for tb_server_db
@@ -297,7 +297,7 @@ CREATE TABLE `tb_server_db` (
   `back_path` varchar(255) NOT NULL COMMENT '备份根目录',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1565610016491220994 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1568273224637140994 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
 
 -- ----------------------------
 -- Table structure for tb_server_defense
@@ -312,7 +312,7 @@ CREATE TABLE `tb_server_defense` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1567881234208534531 DEFAULT CHARSET=utf8 COMMENT='系统防御';
+) ENGINE=InnoDB AUTO_INCREMENT=1568133704373530626 DEFAULT CHARSET=utf8 COMMENT='系统防御';
 
 -- ----------------------------
 -- Table structure for tb_server_file
@@ -330,7 +330,7 @@ CREATE TABLE `tb_server_file` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1567888456783265794 DEFAULT CHARSET=utf8 COMMENT='文件备份';
+) ENGINE=InnoDB AUTO_INCREMENT=1568273703907676162 DEFAULT CHARSET=utf8 COMMENT='文件备份';
 
 -- ----------------------------
 -- Table structure for tb_server_middleware
@@ -366,6 +366,6 @@ CREATE TABLE `tb_server_monitor` (
   `memory_threshold` tinyint(4) DEFAULT NULL COMMENT '内存告警阈值',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq_server_id` (`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1568072242426847234 DEFAULT CHARSET=utf8 COMMENT='服务器监控';
+) ENGINE=InnoDB AUTO_INCREMENT=1568094056490221571 DEFAULT CHARSET=utf8 COMMENT='服务器监控';
 
 SET FOREIGN_KEY_CHECKS = 1;
