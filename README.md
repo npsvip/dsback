@@ -57,3 +57,7 @@ ENV sysPassWord=登录面板密码,默认admin</br>
 ![6](https://user-images.githubusercontent.com/95081538/188084253-e53eccfe-b971-460a-9e29-1258880d310f.jpg)
 <img width="1677" alt="WechatIMG321" src="https://user-images.githubusercontent.com/95081538/189280624-e44414f9-1703-4ef0-a1c3-783edd3b796f.png">
 ![7](https://user-images.githubusercontent.com/95081538/188084275-6b2c1ee7-05d4-4dee-9bbe-7bd2739c806a.jpg)
+
+**软件交流**</br>
+![1663042652683](https://user-images.githubusercontent.com/95081538/189807721-be7aded0-b58b-4edf-8527-011267596347.jpg)
+
