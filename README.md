@@ -49,6 +49,10 @@ ENV sysPassWord=登录面板密码,默认admin</br>
 示例如下：</br>
 ```docker run -d --name dsback --restart=always -p 8080:8080 -e ip=127.0.0.1 -e port=3306 -e db=dsback -e dbUserName=root -e dbPassWord=root -e sysUserName=admin -e sysPassWord=admin aeert/dsback:1.0.0```
 
+</br>
+或者直接运行上方脚本
+```./panelDB.sh```
+
 **软件截图**
 ![1](https://user-images.githubusercontent.com/95081538/188084123-500ca97a-4d23-473b-98c1-264e935c0587.jpg)
 ![2](https://user-images.githubusercontent.com/95081538/188084152-b2f06ed7-62cf-4237-b9a5-8cd062b2c514.jpg)
