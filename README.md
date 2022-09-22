@@ -1,5 +1,5 @@
 # Panel DB
-Panel DB是一款免费、支持多系统、多种中间件安装、多种数据库定时备份、文件定时备份、系统监控、钉钉通知、企业微信通知、服务器DDOS防护等功能的运维面板，支持docker离线部署，支持在线更新
+Panel DB是一款免费、支持多系统、多种中间件安装、多种数据库定时备份、文件定时备份、系统监控、钉钉通知、企业微信通知、服务器DDOS防护、病毒查杀等功能的运维面板，支持docker离线部署，支持在线更新
 
 ***# 软件功能***</br>
 支持Linux全平台，多种数据库、文件定时备份，多种服务器中间件安装，企业微信通知，系统DDOS防御及防攻击优化等
@@ -14,6 +14,10 @@ Panel DB是一款免费、支持多系统、多种中间件安装、多种数据
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● SqlServer</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● MongoDb</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● PostgreSql
+
+文件备份</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 全量备份</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 增量备份</br>
 
 中间件安装</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Redis</br>
@@ -30,7 +34,8 @@ Panel DB是一款免费、支持多系统、多种中间件安装、多种数据
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 防端口扫描</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 禁UDP</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 禁PING</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 禁止国外IP
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 禁止国外IP</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 病毒查杀</br>
 
 ***# 安装教程***</br>
 step1:</br>
