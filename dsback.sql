@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 07/10/2022 16:43:23
+ Date: 08/10/2022 17:20:52
 */
 
 SET NAMES utf8mb4;
@@ -223,7 +223,7 @@ CREATE TABLE `schedule_job` (
   `status` tinyint(4) DEFAULT NULL COMMENT '任务状态  0：正常  1：暂停',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1578303770100527106 DEFAULT CHARSET=utf8 COMMENT='定时任务';
+) ENGINE=InnoDB AUTO_INCREMENT=1578674337311985666 DEFAULT CHARSET=utf8 COMMENT='定时任务';
 
 -- ----------------------------
 -- Table structure for schedule_job_log
@@ -276,7 +276,7 @@ CREATE TABLE `tb_server` (
   `init` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否换源',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unq_ip` (`ip`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1576095790814752770 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1578614539807719427 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
 
 -- ----------------------------
 -- Table structure for tb_server_db
@@ -289,6 +289,8 @@ CREATE TABLE `tb_server_db` (
   `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '数据库类型(1:mysql 2:oracle 3:sqlserver)',
   `server_id` bigint(20) NOT NULL COMMENT '服务器ID',
   `job_id` bigint(20) DEFAULT NULL COMMENT '任务id',
+  `docker` bit(1) DEFAULT b'0' COMMENT '是否为docker环境',
+  `docker_id` varchar(32) DEFAULT '\0' COMMENT 'docker容器名称',
   `name` varchar(255) NOT NULL COMMENT '数据库',
   `user_name` varchar(64) NOT NULL COMMENT '用户名',
   `pass_word` varchar(64) NOT NULL COMMENT '密码',
@@ -297,7 +299,7 @@ CREATE TABLE `tb_server_db` (
   `back_path` varchar(255) NOT NULL COMMENT '备份根目录',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1578303769995669507 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1578674337215516675 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
 
 -- ----------------------------
 -- Table structure for tb_server_defense
@@ -350,7 +352,7 @@ CREATE TABLE `tb_server_middleware` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1576100361523982338 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
+) ENGINE=InnoDB AUTO_INCREMENT=1578616114521407491 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
 
 -- ----------------------------
 -- Table structure for tb_server_monitor
