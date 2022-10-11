@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 08/10/2022 17:20:52
+ Date: 11/10/2022 16:10:28
 */
 
 SET NAMES utf8mb4;
@@ -223,7 +223,7 @@ CREATE TABLE `schedule_job` (
   `status` tinyint(4) DEFAULT NULL COMMENT '任务状态  0：正常  1：暂停',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1578674337311985666 DEFAULT CHARSET=utf8 COMMENT='定时任务';
+) ENGINE=InnoDB AUTO_INCREMENT=1579633304867524611 DEFAULT CHARSET=utf8 COMMENT='定时任务';
 
 -- ----------------------------
 -- Table structure for schedule_job_log
@@ -275,8 +275,8 @@ CREATE TABLE `tb_server` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `init` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否换源',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `unq_ip` (`ip`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1578614539807719427 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
+  UNIQUE KEY `unq_ip_port` (`ip`,`port`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1579351423903076354 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
 
 -- ----------------------------
 -- Table structure for tb_server_db
@@ -299,7 +299,7 @@ CREATE TABLE `tb_server_db` (
   `back_path` varchar(255) NOT NULL COMMENT '备份根目录',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1578674337215516675 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1578976828096249858 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
 
 -- ----------------------------
 -- Table structure for tb_server_defense
@@ -314,7 +314,7 @@ CREATE TABLE `tb_server_defense` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1573132528879955970 DEFAULT CHARSET=utf8 COMMENT='系统防御';
+) ENGINE=InnoDB AUTO_INCREMENT=1579297264801710083 DEFAULT CHARSET=utf8 COMMENT='系统防御';
 
 -- ----------------------------
 -- Table structure for tb_server_file
@@ -333,7 +333,7 @@ CREATE TABLE `tb_server_file` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1572406392164261891 DEFAULT CHARSET=utf8 COMMENT='文件备份';
+) ENGINE=InnoDB AUTO_INCREMENT=1579633304641032194 DEFAULT CHARSET=utf8 COMMENT='文件备份';
 
 -- ----------------------------
 -- Table structure for tb_server_middleware
@@ -352,7 +352,7 @@ CREATE TABLE `tb_server_middleware` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1578616114521407491 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
+) ENGINE=InnoDB AUTO_INCREMENT=1579354120190431235 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
 
 -- ----------------------------
 -- Table structure for tb_server_monitor
