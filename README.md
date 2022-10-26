@@ -53,7 +53,7 @@ ENV sysUserName=登录面板账户,默认admin</br>
 ENV sysPassWord=登录面板密码,默认admin</br>
 
 示例如下：</br>
-```docker run -d --name dsback --restart=always -p 8080:8080 -e ip=127.0.0.1 -e port=3306 -e db=dsback -e dbUserName=root -e dbPassWord=root -e sysUserName=admin -e sysPassWord=admin aeert/dsback:1.0.0```
+```docker run -d --name dsback --restart=always -p 8080:8080 -e ip=你的数据库IP -e port=3306 -e db=dsback -e dbUserName=root -e dbPassWord=root -e sysUserName=admin -e sysPassWord=admin -v 你的本地日志目录:/opt/logs/api/ aeert/dsback:1.0.0```
 
 或者直接运行上方脚本</br>
 ```./panelDB.sh```
