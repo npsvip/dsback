@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 121.41.19.236
+ Source Server         : 127.0.0.1
  Source Server Type    : MySQL
- Source Server Version : 50719
- Source Host           : 121.41.19.236:3306
+ Source Server Version : 50541
+ Source Host           : 127.0.0.1:3306
  Source Schema         : dsback
 
  Target Server Type    : MySQL
- Target Server Version : 50719
+ Target Server Version : 50541
  File Encoding         : 65001
 
- Date: 11/10/2022 16:10:28
+ Date: 28/10/2022 18:47:41
 */
 
 SET NAMES utf8mb4;
@@ -223,7 +223,7 @@ CREATE TABLE `schedule_job` (
   `status` tinyint(4) DEFAULT NULL COMMENT '任务状态  0：正常  1：暂停',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1579633304867524611 DEFAULT CHARSET=utf8 COMMENT='定时任务';
+) ENGINE=InnoDB AUTO_INCREMENT=1585944835846619138 DEFAULT CHARSET=utf8 COMMENT='定时任务';
 
 -- ----------------------------
 -- Table structure for schedule_job_log
@@ -256,7 +256,7 @@ CREATE TABLE `tb_dict` (
   `remark` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL COMMENT '备注',
   `del_flag` tinyint(4) DEFAULT '0' COMMENT '删除标记  -1：已删除  0：正常',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1572459044680003587 DEFAULT CHARSET=utf8 COMMENT='字典表';
+) ENGINE=InnoDB AUTO_INCREMENT=1585944963949051907 DEFAULT CHARSET=utf8 COMMENT='字典表';
 
 -- ----------------------------
 -- Table structure for tb_server
@@ -264,8 +264,8 @@ CREATE TABLE `tb_dict` (
 DROP TABLE IF EXISTS `tb_server`;
 CREATE TABLE `tb_server` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `operating_system` tinyint(1) NOT NULL DEFAULT '1' COMMENT '操作系统(0:其它 1:centos 2:ubuntu 3:debian)',
   `system_version` varchar(32) DEFAULT NULL COMMENT '系统版本',
   `ip` varchar(64) NOT NULL COMMENT '服务器IP',
@@ -276,7 +276,7 @@ CREATE TABLE `tb_server` (
   `init` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否换源',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unq_ip_port` (`ip`,`port`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1579351423903076354 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1585941217844183043 DEFAULT CHARSET=utf8 COMMENT='服务器配置';
 
 -- ----------------------------
 -- Table structure for tb_server_db
@@ -284,8 +284,8 @@ CREATE TABLE `tb_server` (
 DROP TABLE IF EXISTS `tb_server_db`;
 CREATE TABLE `tb_server_db` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '数据库类型(1:mysql 2:oracle 3:sqlserver)',
   `server_id` bigint(20) NOT NULL COMMENT '服务器ID',
   `job_id` bigint(20) DEFAULT NULL COMMENT '任务id',
@@ -299,7 +299,7 @@ CREATE TABLE `tb_server_db` (
   `back_path` varchar(255) NOT NULL COMMENT '备份根目录',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1578976828096249858 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
+) ENGINE=InnoDB AUTO_INCREMENT=1585944803827302403 DEFAULT CHARSET=utf8 COMMENT='数据库配置';
 
 -- ----------------------------
 -- Table structure for tb_server_defense
@@ -307,14 +307,14 @@ CREATE TABLE `tb_server_db` (
 DROP TABLE IF EXISTS `tb_server_defense`;
 CREATE TABLE `tb_server_defense` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '软件类型(1:DOS-Deflate 2:syn优化 3:优化端口扫描 4:禁止udp服务 5:禁ping 6:禁止国外 7:iptables防火墙 8:病毒查杀）',
   `server_id` bigint(20) NOT NULL COMMENT '服务器ID',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1579297264801710083 DEFAULT CHARSET=utf8 COMMENT='系统防御';
+) ENGINE=InnoDB AUTO_INCREMENT=1585944904318631939 DEFAULT CHARSET=utf8 COMMENT='系统防御';
 
 -- ----------------------------
 -- Table structure for tb_server_file
@@ -322,8 +322,8 @@ CREATE TABLE `tb_server_defense` (
 DROP TABLE IF EXISTS `tb_server_file`;
 CREATE TABLE `tb_server_file` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `server_id` bigint(20) NOT NULL COMMENT '服务器ID',
   `path` varchar(255) NOT NULL COMMENT '源文件或目录',
   `job_id` bigint(20) DEFAULT NULL COMMENT '任务id',
@@ -333,7 +333,7 @@ CREATE TABLE `tb_server_file` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `notice_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '通知类型 (0:不通知 1:仅失败通知 2:仅成功通知 3:全部通知)',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1579633304641032194 DEFAULT CHARSET=utf8 COMMENT='文件备份';
+) ENGINE=InnoDB AUTO_INCREMENT=1585944835838230530 DEFAULT CHARSET=utf8 COMMENT='文件备份';
 
 -- ----------------------------
 -- Table structure for tb_server_middleware
@@ -341,8 +341,8 @@ CREATE TABLE `tb_server_file` (
 DROP TABLE IF EXISTS `tb_server_middleware`;
 CREATE TABLE `tb_server_middleware` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '中间件类型(1:mysql 2:oracle 3:sqlserver 4:redis 5:mongodb 6:postgresql 7:docker 8:nginx)',
   `version` varchar(32) NOT NULL DEFAULT '0' COMMENT '中间件版本',
   `port` varchar(8) NOT NULL DEFAULT '22' COMMENT '服务器SSH端口',
@@ -352,7 +352,7 @@ CREATE TABLE `tb_server_middleware` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `unq` (`type`,`server_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1579354120190431235 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
+) ENGINE=InnoDB AUTO_INCREMENT=1585944865366130691 DEFAULT CHARSET=utf8 COMMENT='中间件安装';
 
 -- ----------------------------
 -- Table structure for tb_server_monitor
@@ -360,8 +360,8 @@ CREATE TABLE `tb_server_middleware` (
 DROP TABLE IF EXISTS `tb_server_monitor`;
 CREATE TABLE `tb_server_monitor` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `server_id` bigint(20) NOT NULL DEFAULT '1' COMMENT '服务器ID',
   `job_id` bigint(20) DEFAULT NULL COMMENT '任务id',
   `middleware` varchar(512) DEFAULT NULL COMMENT '中间件或服务',
