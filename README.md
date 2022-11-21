@@ -8,6 +8,7 @@ Panel DB是一款免费、支持多系统、多种中间件安装、多种数据
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Linux全平台(中间件安装及系统防护功能仅支持Centos、Ubuntu、Debian)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Windows Server</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 钉钉实时通知</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 邮箱实时通知</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 企业微信实时通知</br>
 
 数据库备份</br>
