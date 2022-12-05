@@ -70,6 +70,3 @@ ENV sysPassWord=登录面板密码,默认admin</br>
 ![1663057386766](https://user-images.githubusercontent.com/95081538/189850907-4cc438d8-1dc6-413a-92a8-d2e2e4c0ac1a.jpg)
 ![7](https://user-images.githubusercontent.com/95081538/188084275-6b2c1ee7-05d4-4dee-9bbe-7bd2739c806a.jpg)
 
-**软件交流**</br>
-![1663042652683](https://user-images.githubusercontent.com/95081538/189807721-be7aded0-b58b-4edf-8527-011267596347.jpg)
-
