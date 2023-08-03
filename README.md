@@ -55,9 +55,7 @@ ENV sysPassWord=登录面板密码,默认admin</br>
 
 示例如下：</br>
 ```docker run -d --name dsback --restart=always -p 8080:8080 -e ip=你的数据库IP -e port=你的数据库端口 -e db=你的数据库 -e dbUserName=你的数据库账号 -e dbPassWord=你的数据库密码 -e sysUserName=admin -e sysPassWord=admin -v 你的本地日志目录:/opt/logs/api/ aeert/dsback:latest
-
 # ARM架构可选择 aeert/dsback:arm 或 aeert/dsback:arm64 镜像
-
 ```
 
 或者直接运行上方脚本</br>
